@@ -1,0 +1,157 @@
+
+		        body
+			{
+				width:1000px;
+				margin:auto;
+				margin-top:20px;
+				margin-bottom:20px;	
+				background-color: rgb(116,208,241);
+			}
+
+			#en_tete
+			{
+				width:1000px;
+				height:140px;
+				background-image:url("ban.png");
+				background-repeat:no-repeat;
+				margin-left:250px ;
+				
+			}
+
+			#menu
+			{
+				float:left;
+				width:138px;
+				margin-top:0px;
+                                
+			}
+
+			#menu4
+			{
+				float:left;
+				width:138px;
+				margin-top:0px;
+				margin-left:-140px;
+                                
+			}
+			
+			#menu2
+			{
+				float:left;
+				width:138px;
+				margin-top:-160px;
+                                
+			}
+			#menu3
+			{
+				float:left;
+				width:138px;
+				margin-top:180px;
+                                
+			}
+
+			.element_menu
+			{
+				background-color: rgba(0,127,255,0.5);		
+				border:1px solid black;				
+				margin-bottom:20px;
+			}
+
+			.element_menu2
+			{
+				background-color: rgba(0,127,255,0.5);		
+				border:1px solid black;				
+				margin-bottom:30px;
+			}
+
+                        a
+                        {
+                          color:blue);
+                          
+
+                          }
+
+			.element_menu h3
+			{	
+			   font-size:18px;
+				color:black;
+				font-family:Arial, "Arial Black", "Times New Roman", Times, serif;
+				text-align:center;
+			}
+
+			.element_menu ul
+			{
+				padding:0px;
+				padding-left:20px;
+				margin:0px;
+				margin-bottom:5px;
+			}
+			.element_menu2 ul2
+			{
+				padding:0px;
+				padding-left:20px;
+				margin:0px;
+				margin-bottom:5px;
+			}
+
+			.element_menu a
+			{
+			     text-decoration: none; 
+			     font-size:14px;
+		             color:black;
+			}
+
+			.element_menu a:hover
+			{
+				background-color:black;
+				color:white;
+			}
+
+
+			#corps
+			{
+				margin-left:180px;
+				margin-bottom:20px;
+				padding:50px;
+				font-size:16px;
+				color:blue;
+				background-color: rgba(0,127,255,0.5);
+				font-family:Arial, "Arial Black", "Times New Roman", Times, serif;
+				border:1px solid black;
+			}
+
+			#corps h1
+			{
+				color:black;
+				font-size:20px;
+				text-align:center;
+				font-family:Arial, "Arial Black", "Times New Roman", Times, serif;
+			}
+
+			#corps h2
+			{
+				height:30px;
+				font-size:20px;
+				padding-left:30px;
+				color:black;
+				text-align:left;
+			}
+
+			#corps h3
+			{
+				height:12px;
+				font-size:20px;
+				padding-left:30px;
+				color:black;
+				text-align:center;
+			}
+
+			#pied_de_page
+			{
+				padding:5px;
+				text-align:center;
+				color:blue;
+				background-color: rgba(0,127,255,0.5);
+				border:1px solid black;
+				margin:auto;
+			}

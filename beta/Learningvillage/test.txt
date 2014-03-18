@@ -1,0 +1,121 @@
+<?php
+
+    $db = mysql_connect('sql.olympe-network.com', '139695_membres', 'maimai'); 
+	mysql_select_db('139695_membres',$db); 
+	
+	$ousername = '';
+	if(isset($_POST['mdp'], $_POST['pseudo']))
+	{
+
+		if(get_magic_quotes_gpc())
+                {
+
+                        $ousername = stripslashes($_POST['pseudo']);
+                        $username = mysql_real_escape_string(stripslashes($_POST['pseudo']));
+                        $password = stripslashes($_POST['mdp']);
+                }
+                else
+                {
+
+                        $username = mysql_real_escape_string($_POST['pseudo']);
+                        $password = $_POST['mdp'];
+                }
+
+				mysql_select_db('membre',$db);
+
+				$sql = 'SELECT mdp FROM membre where psd="'.$username.'"';
+
+				
+				$req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+
+				$dn = mysql_fetch_assoc($req);
+				
+				
+				if($dn['mdp']=="maimai" and mysql_num_rows($req)>0)
+                {
+
+					session_start(); 
+					$_SESSION['username'] = $_POST['pseudo'];
+                   
+					
+				?>
+				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+				<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+					<head>
+						<title>Learning village - Accueil</title>
+						<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+						 <link rel="stylesheet"type="text/css" href="des.css" />
+					</head>
+					<body>
+						<div id="en_tete">
+				
+							
+						</div>
+				
+						<div id="menu">		
+							<div class="element_menu">
+								<h3>Menu</h3>
+								<ul>
+									<li><a href="index.html">Accueil</a></li>
+									<li><a href="theme.html">Les Themes</a></li>
+									<li><a href="eleve.html">Les Eleves</a></li>
+									<li><a href="prof.html">Les Profs</a></li>
+									<li><a href="workgroup.html">Les WorkGroups</a></li>
+								</ul>
+							</div>			
+						</div>
+				
+						<div id="corps">
+							<h1>Bienvenue echo <? "$_SESSION['username']";?> sur Learning village</h1>
+				
+							<p>
+								Ce site est un site éducatif permmettant aux des échanges entre les éleves et les professeurs
+							</p>
+							<form action="test.php" method="post" name="page1" >
+						<table cellspacing="2" cellpadding="2" border="0">
+						<?
+							$error = $_GET['error'];
+							if($error==1){
+							echo "<p><font color=\"red\"> Mot de passe ou pseudo incorrecte.</font><p>";
+							}
+							if($error==2){
+							echo "<p><font color=\"red\"> Veuillez reentrer votre pseudo et mot de passe.</font><p>";
+							}
+						?>
+						<td> Votre Pseudo :</td>
+						<td><input type="text" name="pseudo" ></td>
+						</tr>
+				
+						<tr>
+						<td> Votre mot de passe :</td>
+						<td><input type="password" name="mdp"></td>
+						</tr>
+						<tr>
+						<td></td>
+						<td><input type="submit" name="Connexion"></td>
+						</tr>
+						</table>
+						</form>
+						</div>
+								<div id="pied_de_page">
+							<p>Copyright 2012, tous droits réservés</p>
+						</div>	 
+						
+				
+				  	
+					</body>
+				</html>
+					
+				<?php
+				}else
+				{
+				$error = 1;
+				header('Location: connection.php?error=1');
+				}
+	}else
+	{
+
+	header('Location : connection.php?error=2');
+	}
+	?>
+

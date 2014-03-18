@@ -1,0 +1,172 @@
+$sql = "SELECT nomw,text,iduser,idt FROM WORKGROUPT WHERE idw = '".$_GET['id']."' "; 
+$sql = "DELETE FROM WORKGROUPT WHERE idw = '".$_GET['id']."'";
+$req = $bdd->prepare("INSERT INTO WORKGROUP(nomw,text,iduser) VALUES( :nomw, :text , :iduser)");
+$sql = "SELECT idw FROM WORKGROUP WHERE nomw = '$nomw' ";
+$req = $bdd->prepare("INSERT INTO ESTCONNECTE(iduser,idw) VALUES(:iduser, :idw)");
+$req = $bdd->prepare("INSERT INTO CONCERNE(idtheme,idw) VALUES(:idtheme, :idw)");
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "SELECT iduser FROM WORKGROUP WHERE idw = '".$_GET['id']."' "; 
+$req = $bdd->prepare("INSERT INTO ESTCONNECTE (idw,iduser) VALUES(:idw, :iduser)");
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' ";
+$sql = "SELECT nom FROM UTILISATEUR WHERE iduser = '".$_SESSION['userid']."' "; 
+$req = $bdd->prepare('INSERT INTO CHAT (nom,text,idu) VALUES(:nom,:text,:idu)');
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$req = $bdd->prepare("INSERT INTO WORKGROUPT(nomw,text,iduser,idt) VALUES( :nomw, :text , :iduser,:idt)");
+$sql = "SELECT idw, FROM WORKGROUPT WHERE nomw = '".$nomw."' "; 
+$req = $bdd->prepare("INSERT INTO QUESTION(iduser1,iduser2,sujet,texte,rep) VALUES(:iduser1,:iduser2,:sujet,:texte,:rep)");
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "SELECT iduser,nom,prenom FROM UTILISATEUR WHERE prof = 0 ORDER BY nom"; 
+$req = $bdd->prepare("INSERT INTO QUESTION(iduser2,texte,iduser1,sujet,date_question) VALUES(:iduser2,:texte,:iduser1,:sujet,:date_question)");
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "SELECT idw FROM WORKGROUP WHERE nomw = '".$idg1."' "; 
+$req = $bdd->prepare("INSERT INTO WORKGQ(idg3,texte,idg1,sujet) VALUES(:idg3,:texte,:idg1,:sujet)");
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "SELECT iduser FROM MODIFIE WHERE idtheme = '".$_GET['id']."' "; 
+$sql = "SELECT nomexo,text,nbetoile FROM EXO WHERE idexo = '".$_GET['idt']."'"; 
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "SELECT iduser1,idexo FROM FAIRE WHERE idexo = '".$_GET['ide']."' "; 
+$sqll = "SELECT UTILISATEUR.iduser,nom,FAIRE.idf FROM FAIRE INNER JOIN UTILISATEUR ON FAIRE.iduser1 WHERE FAIRE.idexo = '".$dn['idexo']."' AND FAIRE.iduser1 = 			UTILISATEUR.iduser"; 
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sqll = "SELECT idexo,note,remarque FROM FAIRE WHERE FAIRE.iduser1 = '".$_SESSION['userid']."' AND  FAIRE.note  != '-1' "; 
+$sql = "SELECT nomexo FROM EXO WHERE idexo = '".$data['idexo']."' "; 
+$sql = "SELECT note FROM EVALUE WHERE idu1 = '".$_SESSION['userid']."' "; 
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' ";
+$sql = "SELECT iduser FROM MODIFIE WHERE idtheme = '".$_GET['id']."' "; 
+$sql = "SELECT nomexo,nbetoile,text FROM EXO WHERE idexo = '".$_GET['ide']."'";
+$req = $bdd->prepare('INSERT INTO FAIRE(rep,iduser1,idexo) VALUES(:rep, :iduser1, :idexo)');
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "SELECT nomexo,text,nbetoile FROM EXO WHERE idexo = '".$_GET['id']."' "; 
+$sql = "UPDATE EXO SET nomexo='".$nomexo."' , text = '".$text."' ,nbetoile = '".$nbetoile."' WHERE idexo = '".$_GET['id']."' ";
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "DELETE FROM EXO WHERE idexo = '".$_GET['id']."'";
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$req = $bdd->prepare("INSERT INTO EXO(nomexo,text,nbetoile) VALUES(:nomexo, :text, :nbetoile)");
+$sql = "SELECT idexo FROM EXO WHERE nomexo = '$nomexo' ";
+$req = $bdd->prepare("INSERT INTO COMPOSE(idtuto,idexo) VALUES(:idtuto, :idexo)");
+$sql = "SELECT idcmp,idexo FROM COMPOSE WHERE idexo = '".$dn['idexo']."' ";
+$sql = "UPDATE EXO SET idcmp='".$dn['idcmp']."' WHERE idexo = '".$dn['idexo']."' ";
+$sql = "SELECT nomtheme FROM THEME WHERE idtheme = '".$_GET['idt']."' "; 
+$sql = "SELECT iduser FROM INTERESSE WHERE idtheme = '".$_GET['idt']."' "; 
+$req = $bdd->prepare("INSERT INTO QUESTION(iduser1,iduser2,sujet,texte,rep) VALUES(:iduser1,:iduser2,:sujet,:texte,:rep)");
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$req = $bdd->prepare('INSERT INTO UTILISATEUR(nom,prenom,pwd,mail,prof,date_inscription) VALUES(:nom, :prenom, :passe, :email, :prof, :date)');
+$sql = "SELECT iduser FROM MODIFIE WHERE idtheme = '".$_GET['idt']."' "; 
+$sql = "SELECT nomtheme,def FROM THEME WHERE idtheme = '".$_GET['idt']."'"; 
+$sql = "SELECT nomlecon,text FROM LECON WHERE idlecon = '".$_GET['idl']."'"; 
+$sql = "SELECT TUTO.idtuto,nomtuto,niveau FROM ESTFAITDE INNER JOIN TUTO ON ESTFAITDE.idtuto WHERE ESTFAITDE.idlecon = '".$_GET['idl']."' AND ESTFAITDE.idtuto = TUTO.idtuto"; 
+$sql = "SELECT nomlecon,text FROM LECON WHERE idlecon = '".$_GET['id']."' "; 
+$sql = "UPDATE LECON SET nomlecon ='".$nomlecon."' , text = '".$text."'  WHERE idlecon = '".$_GET['id']."' ";
+$sql = "DELETE FROM LECON WHERE idlecon = '".$_GET['id']."'";
+$sql = "UPDATE QUESTION SET rep ='1'  WHERE idq = '".$_GET['idq']."' ";
+$sqll = "SELECT nom,prenom FROM UTILISATEUR WHERE iduser =  '".$_GET['id']."' "; 
+$sqll = "SELECT sujet,date_question,texte FROM QUESTION WHERE idq =  '".$_GET['idq']."' AND iduser1 = '".$_SESSION['userid']."'"; 
+$sql = "SELECT UTILISATEUR.iduser FROM ESTCONNECTE INNER JOIN UTILISATEUR ON ESTCONNECTE.iduser WHERE ESTCONNECTE.idw = '".$_GET['id']."' AND ESTCONNECTE.iduser = UTILISATEUR.iduser AND ESTCONNECTE.iduser = '".$_SESSION['userid']."' "; 
+$sql = "SELECT sujet FROM WORKGQ WHERE idwg = '".$_GET['idw']."' "; 
+$sqll = "SELECT nomw,texte FROM WORKGROUP WHERE idw =  '".$dn['idg3']."' "; 
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "SELECT iduser2,idq,sujet,date_question FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sqll = "SELECT nom,prenom FROM UTILISATEUR WHERE iduser =  '".$data['iduser2']."' "; 
+$sql = "DELETE FROM QUESTION WHERE idq= '".$_GET['id']."'";
+$req = $bdd->prepare("INSERT INTO EVALUE(idu1,idu2,note) VALUES( :idu1,:idu2,:note)");
+$sql = "SELECT iduser,nom,prenom, date_inscription FROM UTILISATEUR WHERE prof = 1 ORDER BY nom"; 
+$sql = "SELECT prof,prenom,nom,iduser,date_inscription,last_co FROM UTILISATEUR WHERE iduser = '".$_GET['id']."' ";
+$sqlll = "SELECT idw FROM ESTCONNECTE WHERE iduser = '".$_GET['id']."'"; 
+$sqll = "SELECT nomw FROM WORKGROUP WHERE idw = '".$dat['idw']."'"; 
+$sql = "SELECT idtheme FROM INTERESSE WHERE iduser = '".$_GET['id']."' ";
+$sqll = "SELECT nomtheme FROM THEME WHERE idtheme = '".$idtheme."'"; 
+$sql = "DELETE FROM WORKGROUPT WHERE idw = '".$_GET['id']."'";
+$req = $bdd->prepare('INSERT INTO INTERESSE(iduser,idtheme) VALUES(:iduser, :idtheme)');
+$reponse = $bdd->query('SELECT nom,text FROM CHAT ORDER BY ID DESC LIMIT 0, 10');
+$sql = "SELECT pwd,iduser FROM UTILISATEUR WHERE mail = '".$username."'";
+$sql = "UPDATE UTILISATEUR SET last_co = '$last_co' WHERE iduser = '$idu' ";
+$sql = "UPDATE UTILISATEUR SET ip = '".$_SERVER['REMOTE_ADDR'].' '.$dn['ip']."' WHERE iduser = '$idu' ";
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "SELECT idtheme,nomtheme,def FROM THEME ORDER BY nomtheme"; 
+$req = $bdd->prepare('INSERT INTO THEME(nomtheme,def) VALUES(:nomtheme, :def)');
+$sql = "SELECT idtheme FROM THEME WHERE nomtheme = '$nomtheme' ";
+$req = $bdd->prepare("INSERT INTO MODIFIE(iduser,idtheme) VALUES(:iduser, :idtheme)");
+$req = $bdd->prepare("INSERT INTO LECON(nomlecon,text) VALUES(:nomlecon, :text)");
+$sql = "SELECT idlecon FROM LECON WHERE nomlecon = '$nomlecon' ";
+$req = $bdd->prepare("INSERT INTO CONTIENT(idtheme,idleconn) VALUES(:idtheme, :idleconn)");
+$sql = "SELECT idc FROM CONTIENT WHERE idleconn = '".$dn['idlecon']."' ";
+$sql = "UPDATE LECON SET idc='".$dn['idc']."' WHERE idlecon = '".$idleconn."' ";
+$sql = "SELECT nomtheme FROM THEME WHERE idtheme = '".$_GET['id']."' "; 
+$sql = "SELECT iduser FROM INTERESSE WHERE idtheme = '".$_GET['id']."' "; 
+$req = $bdd->prepare("INSERT INTO QUESTION(iduser1,iduser2,sujet,texte,rep) VALUES(:iduser1,:iduser2,:sujet,:texte,:rep)");
+$req = $bdd->prepare("INSERT INTO MODIFIE(iduser,idtheme) VALUES(:iduser, :idtheme)");
+$sql = "SELECT iduser FROM MODIFIE WHERE idtheme = '".$_GET['id']."' "; 
+$sql = "SELECT nomtheme,def FROM THEME WHERE idtheme = '".$_GET['id']."' ORDER BY nomtheme"; 
+$sql = "SELECT LECON.idlecon,LECON.nomlecon FROM CONTIENT INNER JOIN LECON ON CONTIENT.idc WHERE CONTIENT.idtheme = '".$_GET['id']."'  AND CONTIENT.idc = LECON.idc "; 
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "UPDATE THEME SET nomtheme='".$nomtheme."' , def = '".$def."'  WHERE idtheme = '".$_GET['id']."' ";
+$sql = "DELETE FROM THEME WHERE idtheme = '".$_GET['id']."'";
+$sql = "SELECT iduser FROM MODIFIE WHERE idtheme = '".$_GET['id']."' "; 
+$sql = "SELECT nomtuto,niveau FROM TUTO WHERE idtuto = '".$_GET['idt']."'";
+$sql = "SELECT EXO.idexo,nomexo,nbetoile FROM COMPOSE INNER JOIN EXO ON COMPOSE.idexo WHERE COMPOSE.idtuto = '".$_GET['idt']."' AND EXO.idexo = COMPOSE.idexo"; 
+$sql = "SELECT nomtuto,text,niveau FROM TUTO WHERE idtuto = '".$_GET['id']."' "; 
+$sql = "UPDATE TUTO SET nomtuto ='".$nomtuto."' , text = '".$text."' , niveau = '".$niveau."'  WHERE idlecon = '".$_GET['id']."' ";
+$sql = "DELETE FROM TUTO WHERE idtuto = '".$_GET['id']."'";
+$req = $bdd->prepare("INSERT INTO TUTO(nomtuto,text,niveau) VALUES(:nomtuto, :text, :niveau)");
+$sql = "SELECT idtuto FROM TUTO WHERE nomtuto = '$nomtuto' ";
+$req = $bdd->prepare("INSERT INTO ESTFAITDE(idlecon,idtuto) VALUES(:idlecon, :idtuto)");
+$sql = "SELECT idetd,idtuto FROM ESTFAITDE WHERE idtuto = '".$dn['idtuto']."' ";
+$sql = "UPDATE TUTO SET idetd='".$dn['idetd']."' WHERE idtuto = '".$dn['idtuto']."' ";
+$sql = "SELECT nomtheme FROM THEME WHERE idtheme = '".$_GET['idt']."' "; 
+$sql = "SELECT iduser FROM INTERESSE WHERE idtheme = '".$_GET['idt']."' "; 
+$req = $bdd->prepare("INSERT INTO QUESTION(iduser1,iduser2,sujet,texte,rep) VALUES(:iduser1,:iduser2,:sujet,:texte,:rep)");
+$sql = "SELECT rep FROM QUESTION WHERE iduser1 = '".$_SESSION['userid']."' "; 
+$sql = "SELECT rep FROM FAIRE WHERE idf= '".$_GET['idf']."' AND iduser1 = '".$_GET['idu']."' "; 
+$sql = "UPDATE FAIRE SET note ='".$note."' , remarque = '".$remarque."' , iduser2 = '".$iduser2."'  WHERE   iduser1 = '".$_GET['idu']."' AND idf = '".$_GET['idf']."'";
+$sql = "SELECT idw,nomw FROM WORKGROUP"; 
+$sqll = "SELECT UTILISATEUR.iduser,nom FROM ESTCONNECTE INNER JOIN UTILISATEUR ON ESTCONNECTE.iduser WHERE ESTCONNECTE.idw = '".$dat['idw']."' AND ESTCONNECTE.iduser = UTILISATEUR.iduser"; 
+$sql = "SELECT idw,nomw FROM WORKGROUP WHERE idw IN (SELECT idw FROM ESTCONNECTE WHERE iduser='".$_SESSION['userid']."')"; 
+$sql = "SELECT nomw,text FROM WORKGROUP WHERE idw = '".$_GET['id']."' "; 
+$sql = "UPDATE WORKGROUP SET nomw ='".$nomw."' , text = '".$text."'   WHERE idw = '".$_GET['id']."' ";
+$sql = "SELECT iduser FROM WORKGROUP WHERE idw = '".$_GET['id']."' "; 
+$sql = "SELECT now,text FROM WORKGROUP WHERE idw = '".$_GET['id']."' "; 
+$sql = "SELECT UTILISATEUR.iduser,nom FROM ESTCONNECTE INNER JOIN UTILISATEUR ON ESTCONNECTE.iduser WHERE ESTCONNECTE.idw = '".$_GET['id']."' AND ESTCONNECTE.iduser = UTILISATEUR.iduser"; 
+$sql = "SELECT UTILISATEUR.iduser FROM ESTCONNECTE INNER JOIN UTILISATEUR ON ESTCONNECTE.iduser WHERE ESTCONNECTE.idw = '".$_GET['id']."' AND ESTCONNECTE.iduser = UTILISATEUR.iduser AND ESTCONNECTE.iduser = '".$_SESSION['userid']."' "; 
+$sql = "SELECT idg3,igw,sujet FROM WORKGQ WHERE idg1 = '".$_GET['id']."' "; 
+$sqll = "SELECT nomw FROM WORKGROUP WHERE idw =  '".$data['idg3']."' "; 
+$sql = "DELETE FROM WORKGROUP WHERE idw = '".$_GET['id']."'";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
